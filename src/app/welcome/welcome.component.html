@@ -1,4 +1,12 @@
 <p>
   welcome works!
 </p>
-<a [routerLink]="['/application/start']">Start New Application</a>
+<div>
+  <a [routerLink]="['/application/start']">Start New Application</a>
+</div>
+<div>
+  <button (click)='login()'>Login</button>
+</div>
+<div *ngIf='isAuthenticated'>
+  <h2>I am authenticated!!!</h2>
+</div>

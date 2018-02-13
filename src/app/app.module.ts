@@ -8,12 +8,14 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './/app-routing.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AuthCallbackComponent
   ],
   imports: [
     BrowserModule,
