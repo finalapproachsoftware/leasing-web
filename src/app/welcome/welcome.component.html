@@ -4,9 +4,22 @@
 <div>
   <a [routerLink]="['/application/start']">Start New Application</a>
 </div>
-<div>
+<div *ngIf='!isAuthenticated'>
   <button (click)='login()'>Login</button>
 </div>
 <div *ngIf='isAuthenticated'>
   <h2>I am authenticated!!!</h2>
+  <button (click)='logout()'>Logout</button>
+  <div>
+    {{access_token}}
+  </div>
+  <div>
+    {{id_token}}
+  </div>
+  <div>
+    {{expires_at}}
+  </div>
+  <div>
+    {{userProfile | json}}
+  </div>
 </div>
