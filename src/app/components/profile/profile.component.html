@@ -1,0 +1,27 @@
+<form class="example-form" [formGroup]="profileForm">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="First Name" formControlName="firstName" required>
+    <mat-error *ngIf="firstNameInput.hasError('required')">
+        First Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Last Name" formControlName="lastName" required/>
+    <mat-error>
+        Last Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button
+          type="submit"
+          [disabled]="!profileForm.valid">
+    Save
+  </button>
+</form>
+<div>
+  <br>Dirty: {{ profileForm.dirty }}
+  <br>Touched: {{ profileForm.touched }}
+  <br>Valid: {{ profileForm.valid }}
+  <br>Value: {{ profileForm.value | json }}
+</div>
